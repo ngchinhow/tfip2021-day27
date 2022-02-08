@@ -1,0 +1,34 @@
+<h1>{{city?.name}}</h1>
+<h3>{{city?.name}} Details</h3>
+<table border="1px solid black">
+  <thead>
+    <td>ID</td>
+    <td>Code</td>
+  </thead>
+  <tbody>
+    <td>{{city?.id}}</td>
+    <td>{{city?.code}}</td>
+  </tbody>
+</table>
+<h3>Weather</h3>
+<table border="1px solid black">
+  <thead>
+    <td>Icon</td>
+    <td>ID</td>
+    <td>Main</td>
+    <td>Description</td>
+    <td>Temperature</td>
+  </thead>
+  <tbody>
+    <tr *ngFor="let weather of city?.weathers">
+      <td>
+        <img [src]="weather.iconUrl" [alt]="'Icon for ' + weather.main">
+      </td>
+      <td>{{weather.id}}</td>
+      <td>{{weather.main}}</td>
+      <td>{{weather.description}}</td>
+      <td>{{weather.temp}}</td>
+    </tr>
+  </tbody>
+</table>
+<button type="submit" [routerLink]="['/']">Back</button>

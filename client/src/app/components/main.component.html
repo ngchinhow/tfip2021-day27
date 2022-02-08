@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+  <label for="city">City:</label>
+  <input type="text" name="city" formControlName="city">
+  <button type="submit">Add</button>
+</form>
+<table border="1px solid black">
+  <tr *ngFor="let city of cities">
+    <td (click)="go(city.toLowerCase())">
+      <span class="city-style">{{city}}</span>
+    </td>
+  </tr>
+</table>
